@@ -28,3 +28,5 @@ application_environments{
 
 release_active = true
 automatic_versioning = true
+
+bitbucket_oauth_enabled = false
