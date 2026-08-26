@@ -83,9 +83,12 @@ class OpenpayChargeService
 
     private function collectChargeData($payment_settings)
     {
-        date_default_timezone_set('America/Mexico_City');
-        $this->logger->info('collectChargeData DATE - ' . date('d/m/Y == H:i:s'));
-        $due_date = date('Y-m-d\TH:i:s', strtotime('+ ' . $payment_settings['deadline'] . ' hours'));
+        $mexico_timezone = new \DateTimeZone('America/Mexico_City');
+        $current_datetime = new \DateTimeImmutable('now', $mexico_timezone);
+        $deadline_hours = isset($payment_settings['deadline']) ? (int) $payment_settings['deadline'] : 0;
+
+        $this->logger->info('collectChargeData DATE - ' . $current_datetime->format('d/m/Y == H:i:s'));
+        $due_date = $current_datetime->modify('+' . $deadline_hours . ' hours')->format('Y-m-d\TH:i:s');
 
         $charge_request = array(
             "method" => "store",
