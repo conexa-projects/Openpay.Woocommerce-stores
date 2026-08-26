@@ -265,7 +265,7 @@ class OpenpayStoresGateway extends WC_Payment_Gateway
         $allowed_currencies_for_country = OpenpayUtils::getCurrencies($selected_country);
 
         $logger = wc_get_logger();
-        $logger->info('DATOS ENVIADOS DESDE GATEWAY: ' . json_encode($post_data));
+        $logger->info('Datos enviados desde gateway: ' . json_encode(OpenpayPaymentSettingsValidation::sanitizeSettingsForLog($post_data)));
 
         // Creamos una instancia de nuestro validador.
         $validator = new OpenpayPaymentSettingsValidation($logger, $this->id);
