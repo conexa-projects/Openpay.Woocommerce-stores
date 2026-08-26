@@ -53,12 +53,6 @@ class OpenpayStoresGateway extends WC_Payment_Gateway
         $this->logger = wc_get_logger();
         $this->country = $this->get_option('country');
 
-        // Disable Plugin if Currency is not supported by Country.
-        $allowedCurrencies = OpenpayUtils::getCurrencies($this->country);
-        if (!in_array(get_woocommerce_currency(), $allowedCurrencies)) {
-            $this->update_option('enabled', '0');
-        }
-
         // Método para establecer las propiedades según los ajustes actuales
         $this->setup_properties();
 
@@ -429,6 +423,15 @@ class OpenpayStoresGateway extends WC_Payment_Gateway
 
         // Incluimos el template (checkout clásico)
         include_once('templates/payment.php');
+    }
+
+    public function is_available()
+    {
+        if (!parent::is_available()) {
+            return false;
+        }
+
+        return $this->validateCurrency();
     }
 
     public function validateCurrency()
