@@ -2,7 +2,7 @@
 Contributors: openpay
 Tags: payments, payment gateway, openpay, woocommerce
 Requires at least: 4.8
-Tested up to: 6.4.3
+Tested up to: 6.8.3
 Requires PHP: 5.6
 Stable tag: 2.0.0
 License: GNU General Public License v3.0
