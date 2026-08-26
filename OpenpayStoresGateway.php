@@ -134,7 +134,7 @@ class OpenpayStoresGateway extends WC_Payment_Gateway
                 'default' => __('', 'woothemes')
             ),
             'test_private_key' => array(
-                'type' => 'text',
+                'type' => 'password',
                 'title' => __('Llave secreta de pruebas', 'woothemes'),
                 'description' => __('Obten tus llaves de prueba de tu cuenta de Openpay ("sk_").', 'woothemes'),
                 'default' => __('', 'woothemes')
@@ -146,7 +146,7 @@ class OpenpayStoresGateway extends WC_Payment_Gateway
                 'default' => __('', 'woothemes')
             ),
             'live_private_key' => array(
-                'type' => 'text',
+                'type' => 'password',
                 'title' => __('Llave secreta de producción', 'woothemes'),
                 'description' => __('Obten tus llaves de producción de tu cuenta de Openpay ("sk_").', 'woothemes'),
                 'default' => __('', 'woothemes')
