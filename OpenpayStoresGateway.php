@@ -463,7 +463,7 @@ class OpenpayStoresGateway extends WC_Payment_Gateway
                 'openpay-classic-styles',
                 plugins_url('assets/css/openpay-store-classic-checkout.css', __FILE__),
                 array(),
-                '2.0.1'
+                OPENPAY_STORES_VERSION
             );
         } else {
             // Si hay bloque, nos aseguramos de que el estilo de bloques se cargue aquí 
