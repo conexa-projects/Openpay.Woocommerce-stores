@@ -14,6 +14,10 @@ use OpenpayStores\Services\OpenpayWebhookProcessorService;
  * Developer: Openpay
  * Text Domain: openpay-stores
  *
+ * Requires at least: 4.8
+ * Tested up to: 7.0.7
+ * Requires PHP: 5.6
+ *
  * WC requires at least: 3.0
  * WC tested up to: 8.5.2
  *
